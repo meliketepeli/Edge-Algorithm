@@ -6,6 +6,11 @@ imgGray=imread("image1.bmp");
 figure
 imshow(imgGray);
 
+image=imread("image3.bmp");
+figure
+imshow(image);
+title("Image Fruits")
+
 image2=edge(imgGray, "canny");
 figure
 imshow(image2);
@@ -21,12 +26,12 @@ figure
 imshow(image4);
 title("CANNY 4");
 
-image5=edge(imgGray, "prewitt");
+image5=edge(imgGray, "prewitt", "horizontal");
 figure
 imshow(image5);
 title("PREWITT");
 
-image6=edge(imgGray, "sobel");
+image6=edge(imgGray, "sobel", "vertical");
 figure
 imshow(image6);
 title("SOBEL");
@@ -35,6 +40,11 @@ image7=edge(imgGray, "roberts");
 figure
 imshow(image7);
 title("ROBERTS");
+
+image8=edge(image, "log");
+figure
+imshow(image8);
+title("LoG (Laplacian of Gaussian Image")
 
 % HOUGH TRANSFORM
 image=imread("gantrycrane.png");
